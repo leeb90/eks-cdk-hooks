@@ -5,8 +5,8 @@ on:
 name: Express Project Application
 
 jobs:
-  build and push:
-    name: Build and Push to ECR
+  build-push:
+    name: Build and Push ECR
     runs-on: ubuntu-latest
 
     steps:
