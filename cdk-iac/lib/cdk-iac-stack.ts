@@ -10,7 +10,7 @@ export class CdkIacStack extends cdk.Stack {
 
     const cluster = new eks.Cluster(this, 'express-eks', {
       version: eks.KubernetesVersion.V1_21,
-      defaultCapacityInstance: ec2.InstanceType.of(ec2.InstanceClass.M5, ec2.InstanceSize.SMALL),
+      defaultCapacityInstance: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.SMALL),
     });
     
     // apply a kubernetes manifest to the cluster
