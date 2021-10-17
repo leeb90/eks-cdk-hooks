@@ -58,3 +58,5 @@ jobs:
     
     - name: Install AWS cdk
       run: 'sudo npm install -g aws-cdk'
+      run: 'cd cdk-iac'
+      run: 'ls'
