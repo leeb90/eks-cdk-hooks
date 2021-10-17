@@ -61,7 +61,7 @@ jobs:
       with:
         node-version: 12.x
     
-    - name: Install AWS cdk
+    - name: Deploy AWS cdk
       run: |
         sudo npm install -g aws-cdk
         cd cdk-iac
