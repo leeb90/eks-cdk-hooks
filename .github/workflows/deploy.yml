@@ -60,4 +60,6 @@ jobs:
       run: |
         sudo npm install -g aws-cdk
         cd cdk-iac
+        npm install
         ls
+        cdk deploy --require-approval=never
