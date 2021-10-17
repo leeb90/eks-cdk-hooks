@@ -61,5 +61,5 @@ jobs:
         sudo npm install -g aws-cdk
         cd cdk-iac
         npm install
-        ls
+        export IMAGE=350516530567.dkr.ecr.us-east-1.amazonaws.com/ecr-eks-cdk:35343112e8a203299e8a77bee6a65c2a705f3918
         cdk deploy --require-approval=never

@@ -29,7 +29,7 @@ export class CdkIacStack extends cdk.Stack {
             containers: [
               {
                 name: "express-kubernetes",
-                image: "350516530567.dkr.ecr.us-east-1.amazonaws.com/ecr-eks-cdk:35343112e8a203299e8a77bee6a65c2a705f3918",
+                image: process.env.IMAGE,
                 ports: [ { containerPort: 8080 } ]
               }
             ]
