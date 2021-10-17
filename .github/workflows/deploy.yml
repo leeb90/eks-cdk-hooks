@@ -30,6 +30,10 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: ecr-eks-cdk
         IMAGE_TAG: ${{ github.sha }}
+      outputs:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: ecr-eks-cdk
+        IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and push it to ECR 
         echo "Build image..."
@@ -62,5 +66,5 @@ jobs:
         sudo npm install -g aws-cdk
         cd cdk-iac
         npm install
-        export IMAGE=350516530567.dkr.ecr.us-east-1.amazonaws.com/ecr-eks-cdk:${{ github.sha }}
+        export IMAGE=${{ needs.build-push.outputs.ECR_REGISTRY }}/${{ needs.build-push.outputs.ECR_REPOSITORY }}:${{ needs.build-push.outputs.IMAGE_TAG }}
         cdk deploy --require-approval=never
