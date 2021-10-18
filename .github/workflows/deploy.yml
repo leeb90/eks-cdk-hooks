@@ -67,5 +67,5 @@ jobs:
         sudo npm install -g aws-cdk
         cd cdk-iac
         npm install
-        export IMAGE=350516530567.dkr.ecr.us-east-1.amazonaws.com/${{ needs.build-push.outputs.ECR_REPOSITORY }}:${{ needs.build-push.outputs.IMAGE_TAG }}
+        export IMAGE=${{ secrets.ACCOUNT_ECR_REGISTRY }}/${{ needs.build-push.outputs.ECR_REPOSITORY }}:${{ needs.build-push.outputs.IMAGE_TAG }}
         cdk deploy --require-approval=never
